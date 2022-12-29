@@ -1,0 +1,14 @@
+.login {
+    width: 300px;
+    height: 900px;
+    background-color: #bfa;
+    padding: 20px;
+}
+.username {
+    margin: 10px auto;
+}
+.btn {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
