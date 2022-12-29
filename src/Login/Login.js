@@ -1,37 +1,37 @@
 import React from 'react';
 import classes from './Login.module.css';
-import {useState} from "react";
+import {Button, Input, Form, PasscodeInput, NumberKeyboard, Dialog} from 'antd-mobile';
 
 const Login = () => {
     
-    const [username, setName] = useState("");
-    const [password, setPassword] = useState("");
-    
-    const nameHandler = (e) => {
-        setName(e.target.value);
-    } 
-    const pwHandler = (e) => {
-        setPassword(e.target.value);
+    const [form] = Form.useForm();
+    const onSubmit = () => {
+        const values = form.getFieldsValue();
+        Dialog.alert({
+            content: JSON.stringify(values),
+        })
     }
-    const clickHandler = () => {
-        alert(username + " " + password);
-        setName("");
-        setPassword("");
-    } 
+    
+    const initialValues = {
+        username2: 'hahaha',
+        password2: '12345'
+    };
 
     return (
         <div className={classes.login} >
-            <div className={classes.username}>
-                username: <input onChange={nameHandler} value={username} type="text"/> <br/>
-            </div>
-            <div className={classes.password}>
-                password: <input onChange={pwHandler} value={password} type="password"/>
-            </div>
-            <br/>
-            <div className={classes.btn}>
-                <button onClick={clickHandler} >submit</button>
-            </div>
-
+            <Form form={form} layout="horizontal" mode="card" initialValues={initialValues}
+                footer={
+                    <Button block color='primary' onClick={onSubmit} size='large'>
+                        Log In
+                    </Button>}
+            >
+                <Form.Item label="Username" name="username2">
+                    <Input placeholder="please input" type="text" clearable/>
+                </Form.Item>
+                <Form.Item label="Password" name="password2">
+                    <Input placeholder="please input" type="passwowrd" clearable/>
+                </Form.Item>
+            </Form>
         </div>
     )
 }
