@@ -9,3 +9,7 @@ An active platform for Hopkins students to buy and sell second-hand items.
 
 ## Test REST API: 
 - Use json-server on Node.
+
+## Tools for Mobile Development:
+- vconsole:
+- react-device-defect:
