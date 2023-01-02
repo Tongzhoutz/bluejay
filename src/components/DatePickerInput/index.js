@@ -1,6 +1,7 @@
 import styles from './index.module.css';
-import datePickerIcon from '../../assets/datePicker-icon.svg';
+import datePickerIcon from '@assets/datePicker-icon.svg';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default  () => (<div className={styles.birthdayInput}>
                 <div className={styles.dobPlaceHolder}>date of birth</div>
                 <div>

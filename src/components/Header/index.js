@@ -1,5 +1,5 @@
 import { CloseOutline } from 'antd-mobile-icons';
-import logo from '../../assets/bluejay-logo.svg';
+import logo from '@assets/bluejay-logo.svg';
 import styles from './index.module.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
