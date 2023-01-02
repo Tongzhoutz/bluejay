@@ -13,3 +13,11 @@ An active platform for Hopkins students to buy and sell second-hand items.
 ## Tools for Mobile Development:
 - vconsole:
 - react-device-defect:
+
+## More Styling tooles: Sass and CSS Modules
+- Sass: allowing nested structures of CSS components;
+- CSS Modules: Avoid conflictings of CSS names.
+
+## Alias Settings
+- craco.config.js: webpack's shortcut configuration
+- jsconfig.json: js config for vscode
