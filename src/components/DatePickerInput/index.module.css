@@ -1,0 +1,20 @@
+
+.birthdayInput {
+    composes: input from '../../common.module.css';
+    margin-top: 10px;
+}
+.dobPlaceHolder {
+    color: tBlue;
+
+}
+
+.yymmdd {
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.datePickerIcon {
+    float: right;
+    height: 20px;
+}
