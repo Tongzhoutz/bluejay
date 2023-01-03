@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './index.module.scss';
 import datePickerIcon from '@assets/datePicker-icon.svg';
 import { DatePicker } from 'antd-mobile';
 import { useState } from 'react';
@@ -11,7 +11,6 @@ const DatePickerInput =  ({
     onChange
 }) => {
 const [visible, setVisible] = useState(false);
-const [curDate, setCurDate] = useState();
 
 const onClickDatePicker = () => {
     setVisible(true);
@@ -22,17 +21,17 @@ return (
             title='Date of Birth'
             visible={visible}
             onClose={() => {
-                setVisible(false)
+                setVisible(false);
             }}
             onConfirm={ (val) => {
-                onChange(val);
+                onChange(moment(val).format('YYYYMMDD'));
             }}
         />
             
             <div className={styles.birthdayInput} onClick={onClickDatePicker}>
                 <div className={styles.dobPlaceHolder}>date of birth</div>
                 <div>
-                    <span className={styles.yymmdd}>{value ? moment(value).format('YYYY-MM-DD') : 'YY/MM/DD'  }</span>
+                    <span className={styles.yymmdd}>{value ? moment(value).format('YYYYMMDD') : 'YY/MM/DD'  }</span>
                     <img className={styles.datePickerIcon} src={datePickerIcon} />
                 </div>
             </div>
