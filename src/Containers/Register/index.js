@@ -4,6 +4,7 @@ import { Input, Button, Form } from 'antd-mobile';
 import styles from './index.module.scss';
 import DatePickerInput from '@components/DatePickerInput';
 import Header from '@components/Header';
+import TInput from '@components/TInput';
 
 const ACCOUNT_TYPE = {
     TEL: 'tel',
@@ -40,15 +41,16 @@ const Register = () => {
         <div className={styles.form}>
             <div className={styles.formTitle}>Create your account</div>
             <Form initialValues={formData} form={form} className={styles.formContainer}>
-                <Form.Item name='name' rules = {[{required: true, message: "Name is blank!"}]}>
-                    <Input placeholder="Name" className={styles.input}/>
+                <Form.Item name='name' rules = {[{ required: true, message: "Name is blank!" }]}>
+                    <TInput length={50} label="Name" />
                 </Form.Item>
 
                 {accountType === ACCOUNT_TYPE.TEL && (
                 <Form.Item name = "tel" rules={[{required: true, message: "Phone number is blank!"}]} > 
-                    <Input placeholder="Phone number" className={styles.input}/>
+                    <TInput length={11} label="Phone number" />
                 </Form.Item>
                 )}
+
                 {accountType === ACCOUNT_TYPE.EMAIL && (
                 <Form.Item name = "email" rules={[{required: true, message: "email is blank!"}]}> 
                     <Input placeholder="Email" className={styles.input}/>
